@@ -1,5 +1,7 @@
 # Statistics Definitions
 
+**RIDO 历史统计定义：Tag / Task 相关口径不适用于当前 RILO；当前统计以 RILO 源码和测试为准。**
+
 Statistics answer an explicit user question. A chart is selected only after its question, population, time boundary and aggregation are defined. Ordinary Category/Tag statistics and the separate Sleep views have different input populations.
 
 ## Source-of-truth rules

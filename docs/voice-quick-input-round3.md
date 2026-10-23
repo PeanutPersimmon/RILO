@@ -1,8 +1,10 @@
 # RIDO 语音输入第三轮交付说明
 
+**历史资料：本文记录 RIDO 开发过程，仅供技术参考，不代表当前 RILO 的产品功能或验证状态。**
+
 仅修改源码和测试代码并静态检查。未编译，未执行测试、模拟器或真机验收；不能把以下实现说明当作真机测试结果。
 
-1. MyLibrary 当前实现：[LibraryBottomBar.kt](D:/Wenjian/Study/MyLibrary/app/src/main/java/com/example/mylibrary/ui/navigation/LibraryBottomBar.kt)，由 MainPagerScreen 的底部 overlay 使用。参数定义：[Dimens.kt](D:/Wenjian/Study/MyLibrary/app/src/main/java/com/example/mylibrary/ui/theme/Dimens.kt)。
+1. MyLibrary 当前实现：`LibraryBottomBar.kt`，由 MainPagerScreen 的底部 overlay 使用。参数定义：`Dimens.kt`。
 2. 复用 11 项 dp 参数：高度 52、圆角 28、阴影 4、底部 padding 36、胶囊水平内 padding 14、item 40、item 间距 8、icon 22、右侧按钮 52、右侧 icon 26、胶囊到按钮 12。背景为不透明 surface、无 outline、tonalElevation 0；选中项为黑白主色圆形，点击无 ripple。
 3. 与 MyLibrary 一样：navigationBarsPadding() 再加 bottom 36dp；实际距物理屏幕底边包含系统导航栏 inset，不是忽略系统栏的固定 36dp。
 4. 胶囊 52dp 高、28dp 圆角，内部水平 padding 14dp。MyLibrary 没有固定左右外 margin，而是固定宽度居中；RIDO 同样处理。四项胶囊宽 212dp，含右侧按钮整组宽 276dp，左右 margin 随窗口宽度等分。
@@ -48,20 +50,20 @@
 
 | 文件 | 本轮 |
 | --- | --- |
-| [AndroidManifest.xml](D:/Wenjian/Study/RIDO/app/src/main/AndroidManifest.xml) | 修改 |
-| [AppNavigationBar.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppNavigationBar.kt) | 修改 |
-| [AppScaffold.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppScaffold.kt) | 修改 |
-| [AppSnackbar.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppSnackbar.kt) | 修改 |
-| [RidoApp.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt) | 修改 |
-| [VoiceInputSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) | 修改 |
-| [VoiceOverlayHost.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceOverlayHost.kt) | 新增 |
-| [VoiceViewModel.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt) | 修改 |
-| [VoiceSpeechRecognizer.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechRecognizer.kt) | 修改 |
-| [VoiceSpeechPolicy.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechPolicy.kt) | 新增 |
-| [ExecuteVoiceActionUseCase.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt) | 修改 |
-| [VoiceExecutionAttempt.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionAttempt.kt) | 新增 |
-| [VoiceExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt) | 修改 |
-| [VoiceExecutionAttemptTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionAttemptTest.kt) | 新增 |
-| [VoiceSpeechPolicyTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechPolicyTest.kt) | 新增 |
-| [VoiceQuickExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt) | 修改 |
-| [VoiceInteractionTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceInteractionTest.kt) | 新增 |
+| [AndroidManifest.xml](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/AndroidManifest.xml) | 修改 |
+| [AppNavigationBar.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppNavigationBar.kt) | 修改 |
+| [AppScaffold.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppScaffold.kt) | 修改 |
+| [AppSnackbar.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppSnackbar.kt) | 修改 |
+| [RidoApp.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt) | 修改 |
+| [VoiceInputSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) | 修改 |
+| [VoiceOverlayHost.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceOverlayHost.kt) | 新增 |
+| [VoiceViewModel.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt) | 修改 |
+| `VoiceSpeechRecognizer.kt` | 修改 |
+| `VoiceSpeechPolicy.kt` | 新增 |
+| [ExecuteVoiceActionUseCase.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt) | 修改 |
+| [VoiceExecutionAttempt.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionAttempt.kt) | 新增 |
+| [VoiceExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt) | 修改 |
+| [VoiceExecutionAttemptTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionAttemptTest.kt) | 新增 |
+| `VoiceSpeechPolicyTest.kt` | 新增 |
+| [VoiceQuickExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt) | 修改 |
+| [VoiceInteractionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceInteractionTest.kt) | 新增 |

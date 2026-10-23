@@ -1,12 +1,14 @@
 # RIDO 语音输入第六轮：中文语言协商
 
+**历史资料：本文记录 RIDO 开发过程，仅供技术参考，不代表当前 RILO 的产品功能或验证状态。**
+
 仅源码/测试代码修改及静态检查；未运行 Gradle、Git、ADB、模拟器、真机或测试，未 commit / push。不能据此宣称当前 GoogleTTSRecognitionService 已识别成功。
 
 ## 调查结果及 API 核对
 
 - 修复前 VoiceSpeechRecognizer 和 VoiceInputSheet 的系统识别 Activity Intent 都硬编码 EXTRA_LANGUAGE="zh-CN"。SpeechRecognitionProbe 只探测服务与 Activity，不设置识别语言，本轮未修改。
-- 项目 compileSdk=36、minSdk=26。静态读取 D:/Android/Sdk/platforms/android-36/android.jar 类文件，确认真实签名 checkRecognitionSupport(Intent, Executor, RecognitionSupportCallback)。
-- 结合本地 D:/Android/Sdk/sources/android-36.1/android/speech/ 源码核对回调 onSupportResult(RecognitionSupport)、onError(int) 及语言字段语义。未执行 Java、Gradle 或 SDK 工具。
+- 项目 compileSdk=36、minSdk=26。静态读取 Android SDK 36 的 android.jar 类文件，确认真实签名 checkRecognitionSupport(Intent, Executor, RecognitionSupportCallback)。
+- 结合本地 Android SDK 36.1 的 android/speech 源码 源码核对回调 onSupportResult(RecognitionSupport)、onError(int) 及语言字段语义。未执行 Java、Gradle 或 SDK 工具。
 - 读取 installedOnDeviceLanguages、onlineLanguages、pendingOnDeviceLanguages、supportedOnDeviceLanguages 四类集合。后两类分别表示待下载、需要下载，不能当作已就绪。
 
 ## 最终流程
@@ -38,16 +40,16 @@
 
 ## 本轮文件
 
-- [VoiceSpeechRecognizer.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechRecognizer.kt)
-- [SpeechRecognitionDiagnostics.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionDiagnostics.kt)
-- [VoiceSpeechPolicy.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechPolicy.kt)
-- [SpeechLanguageNegotiation.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechLanguageNegotiation.kt)
-- [SpeechRecognitionIntents.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionIntents.kt)
-- [VoiceInputSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt)
-- [SpeechLanguageNegotiationTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechLanguageNegotiationTest.kt)
-- [SpeechSupportQueryTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechSupportQueryTest.kt)
-- [SpeechRecognitionDiagnosticsTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionDiagnosticsTest.kt)
-- [SpeechLanguageIntentTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/SpeechLanguageIntentTest.kt)
+- `VoiceSpeechRecognizer.kt`
+- `SpeechRecognitionDiagnostics.kt`
+- `VoiceSpeechPolicy.kt`
+- `SpeechLanguageNegotiation.kt`
+- `SpeechRecognitionIntents.kt`
+- [VoiceInputSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt)
+- `SpeechLanguageNegotiationTest.kt`
+- `SpeechSupportQueryTest.kt`
+- `SpeechRecognitionDiagnosticsTest.kt`
+- `SpeechLanguageIntentTest.kt`
 - 本报告：docs/voice-quick-input-round6.md
 
 下次真机：长按麦克风说中文；如仍失败，复制设置中的语音识别诊断。可据此判断服务是否声明中文、默认/zh-CN/cmn-Hans-CN 哪些已尝试以及最终失败位置。

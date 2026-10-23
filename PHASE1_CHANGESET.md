@@ -1,5 +1,7 @@
 # RILO Phase 1 file changes
 
+**历史 Phase 1 清单：仅记录从 RIDO 建立 RILO 时的文件变化，不代表当前 RILO 产品范围。**
+
 Compared with the RIDO source tree after mapping Kotlin package and Room schema directory paths. Build outputs, IDE caches, `local.properties`, and this inventory itself are excluded.
 
 - Modified: 377

@@ -1,5 +1,7 @@
 # RIDO 语音输入第五轮：完成事实 Fast Path
 
+**历史资料：本文记录 RIDO 开发过程，仅供技术参考，不代表当前 RILO 的产品功能或验证状态。**
+
 实现已落在源码；只做静态检查，未编译、未执行任何测试、未运行 Git / Gradle / ADB / 模拟器，未操作真机，未 commit / push。
 
 ## 行为
@@ -33,23 +35,23 @@
 
 ## 本轮编辑文件
 
-- [VoiceAction.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceAction.kt)
-- [VoiceCompletedFactParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceCompletedFactParser.kt)
-- [VoiceCommandParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceCommandParser.kt)
-- [VoiceTargetResolver.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceTargetResolver.kt)
-- [VoiceExecutionPlanner.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionPlanner.kt)
-- [ExecuteVoiceActionUseCase.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt)
-- [VoiceViewModel.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt)
-- [VoiceInputSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt)
-- [TodayTimeline.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayTimeline.kt)
-- [PlanScreen.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/plan/PlanScreen.kt)
-- [PlanTimeline.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/plan/PlanTimeline.kt)
-- [VoiceCompletedFactTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceCompletedFactTest.kt)
-- [VoiceCommandParserTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceCommandParserTest.kt)
-- [VoiceExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt)
-- [TimelineProjectorTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/service/TimelineProjectorTest.kt)
-- [VoiceQuickExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt)
-- [CompletedFactUiTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/CompletedFactUiTest.kt)
+- [VoiceAction.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceAction.kt)
+- `VoiceCompletedFactParser.kt`
+- `VoiceCommandParser.kt`
+- [VoiceTargetResolver.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceTargetResolver.kt)
+- [VoiceExecutionPlanner.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionPlanner.kt)
+- [ExecuteVoiceActionUseCase.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt)
+- [VoiceViewModel.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt)
+- [VoiceInputSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt)
+- [TodayTimeline.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayTimeline.kt)
+- [PlanScreen.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/plan/PlanScreen.kt)
+- [PlanTimeline.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/plan/PlanTimeline.kt)
+- `VoiceCompletedFactTest.kt`
+- `VoiceCommandParserTest.kt`
+- [VoiceExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt)
+- [TimelineProjectorTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/test/java/io/github/peanutpersimmon/rido/domain/service/TimelineProjectorTest.kt)
+- [VoiceQuickExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt)
+- [CompletedFactUiTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/CompletedFactUiTest.kt)
 - 本报告：docs/voice-quick-input-round5.md
 
 未修改 Room schema、Entity、Migration、关键词规则体系、VoiceUndo、BottomBar、IME、Snackbar 视觉或语音诊断。

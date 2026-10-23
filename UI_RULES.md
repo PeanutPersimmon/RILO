@@ -1,5 +1,7 @@
 # RIDO UI Rules
 
+**RIDO 历史 UI 规则：本页原有的“规范性”措辞不适用于当前 RILO；当前界面请以源码为准。**
+
 This file is normative for every new screen and component.
 
 ## Interaction philosophy

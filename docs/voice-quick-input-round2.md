@@ -1,5 +1,7 @@
 # RIDO 第二轮快速录入交付说明
 
+**历史资料：本文记录 RIDO 开发过程，仅供技术参考，不代表当前 RILO 的产品功能或验证状态。**
+
 代码已修改，仅完成静态源码检查；没有编译、运行测试或进行设备验收。下述行为是当前实现，不代表已在真机验证。
 
 1. Today Header 麦克风已删除；底部导航最右侧为独立圆形麦克风按钮。
@@ -41,28 +43,28 @@
 
 | 操作 | 文件 |
 | --- | --- |
-| 修改 | [VoiceAction.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceAction.kt) |
-| 修改 | [VoiceDateTimeParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceDateTimeParser.kt) |
-| 修改 | [VoiceCommandParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceCommandParser.kt) |
-| 新增 | [VoiceLocationParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceLocationParser.kt) |
-| 新增 | [VoiceExecutionPlanner.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionPlanner.kt) |
-| 新增 | [ExecuteVoiceActionUseCase.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt) |
-| 新增 | [VoiceUndo.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceUndo.kt) |
-| 修改 | [RidoCoreRepository.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/repository/RidoCoreRepository.kt) |
-| 修改 | [RoomRidoRepository.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/data/repository/RoomRidoRepository.kt) |
-| 修改 | [VoiceViewModel.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt) |
-| 修改 | [RidoApp.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt) |
-| 修改 | [AppNavigationBar.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppNavigationBar.kt) |
-| 修改 | [TodayHeader.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayHeader.kt) |
-| 修改 | [TodayScreen.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayScreen.kt) |
-| 修改 | [VoiceInputSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) |
-| 修改 | [EditorFields.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorFields.kt) |
-| 修改 | [TaskEditorSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/task/TaskEditorSheet.kt) |
-| 修改 | [EventEditorSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/event/EventEditorSheet.kt) |
-| 修改 | [SessionEditorSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/session/SessionEditorSheet.kt) |
-| 新增 | [VoiceQuickInputTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceQuickInputTest.kt) |
-| 新增 | [VoiceExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt) |
-| 新增 | [VoiceQuickExecutionTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt) |
-| 新增 | [VoiceQuickInputUiTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceQuickInputUiTest.kt) |
+| 修改 | [VoiceAction.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceAction.kt) |
+| 修改 | `VoiceDateTimeParser.kt` |
+| 修改 | `VoiceCommandParser.kt` |
+| 新增 | `VoiceLocationParser.kt` |
+| 新增 | [VoiceExecutionPlanner.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionPlanner.kt) |
+| 新增 | [ExecuteVoiceActionUseCase.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/ExecuteVoiceActionUseCase.kt) |
+| 新增 | [VoiceUndo.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceUndo.kt) |
+| 修改 | [RidoCoreRepository.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/domain/repository/RidoCoreRepository.kt) |
+| 修改 | [RoomRidoRepository.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/data/repository/RoomRidoRepository.kt) |
+| 修改 | [VoiceViewModel.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceViewModel.kt) |
+| 修改 | [RidoApp.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/RidoApp.kt) |
+| 修改 | [AppNavigationBar.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/components/AppNavigationBar.kt) |
+| 修改 | [TodayHeader.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayHeader.kt) |
+| 修改 | [TodayScreen.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/today/TodayScreen.kt) |
+| 修改 | [VoiceInputSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) |
+| 修改 | [EditorFields.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/components/EditorFields.kt) |
+| 修改 | [TaskEditorSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/task/TaskEditorSheet.kt) |
+| 修改 | [EventEditorSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/event/EventEditorSheet.kt) |
+| 修改 | [SessionEditorSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/editor/session/SessionEditorSheet.kt) |
+| 新增 | `VoiceQuickInputTest.kt` |
+| 新增 | [VoiceExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceExecutionTest.kt) |
+| 新增 | [VoiceQuickExecutionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/data/VoiceQuickExecutionTest.kt) |
+| 新增 | [VoiceQuickInputUiTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceQuickInputUiTest.kt) |
 
 未修改 Room schema、实体／迁移、关键词规则体系、统计页或计划页；没有 AI 接入、聊天界面或第五个导航页面。

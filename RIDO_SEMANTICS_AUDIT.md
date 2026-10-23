@@ -139,3 +139,5 @@ Entity 对应增加 nullable 列、ForeignKey(EventEntity, id → sourceEventId,
 复用现有字段、共享编辑器和 timeY，只增加上述一个来源字段；完成持久化来源链路、Event→Record 预填与严格实际时间校验；用共享派生 helper 统一 Today / 历史状态、完成点去重和逾期；在现有轴布局上分计划/事实两侧；接通顶部编辑及停止计时两种动作；保留其它页面布局与单元格放置规则。
 
 必要的静态检查包括来源字段的 mapper/编辑/保存透传、迁移与 Entity 声明一致、删除不级联、历史日期边界、完成点与 Record 去重、所有编辑回调。遵守不运行 Gradle/Git/ADB/设备的限制，不把静态审阅称作编译或运行验证。
+
+**RIDO 历史调查资料：不代表当前 RILO 的功能、Room Schema 或验证状态。**

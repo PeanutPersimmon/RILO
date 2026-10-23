@@ -1,5 +1,7 @@
 # RIDO 语音输入第四轮交付说明
 
+**历史资料：本文记录 RIDO 开发过程，仅供技术参考，不代表当前 RILO 的产品功能或验证状态。**
+
 本轮仅源码修改、测试代码补充与静态检查。未编译或运行测试，未操作真机；现在具备收集运行时证据的入口，尚不能确认当前手机究竟在哪一层失败。
 
 下次真机操作：长按尝试识别后，打开「设置 → 语音识别诊断 → 复制」，可得到同一次尝试的探测结果、组件和执行轨迹。打开诊断不会清掉上次失败；数据仅保留当前进程内的最近一次尝试，重启 App 后不持久保存。
@@ -43,17 +45,17 @@ Activity fallback 使用 Android 标准 action 和结果契约，核对依据为
 
 | 文件 | 操作 |
 | --- | --- |
-| [AndroidManifest.xml](D:/Wenjian/Study/RIDO/app/src/main/AndroidManifest.xml) | 修改 |
-| [VoiceDateTimeParser.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceDateTimeParser.kt) | 修改 |
-| [VoiceTimeNormalizer.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/domain/voice/VoiceTimeNormalizer.kt) | 新增 |
-| [SpeechRecognitionDiagnostics.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionDiagnostics.kt) | 新增 |
-| [SpeechRecognitionProbe.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionProbe.kt) | 新增 |
-| [VoiceSpeechPolicy.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechPolicy.kt) | 修改 |
-| [VoiceSpeechRecognizer.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/presentation/voice/VoiceSpeechRecognizer.kt) | 修改 |
-| [VoiceInputSheet.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) | 修改 |
-| [SettingsContent.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/settings/SettingsContent.kt) | 修改 |
-| [SpeechDiagnosticsDialog.kt](D:/Wenjian/Study/RIDO/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/settings/SpeechDiagnosticsDialog.kt) | 新增 |
-| [VoiceDotTimeTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/domain/voice/VoiceDotTimeTest.kt) | 新增 |
-| [SpeechRecognitionDiagnosticsTest.kt](D:/Wenjian/Study/RIDO/app/src/test/java/io/github/peanutpersimmon/rido/presentation/voice/SpeechRecognitionDiagnosticsTest.kt) | 新增 |
-| [VoiceInteractionTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceInteractionTest.kt) | 修改 |
-| [SpeechDiagnosticsUiTest.kt](D:/Wenjian/Study/RIDO/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/SpeechDiagnosticsUiTest.kt) | 新增 |
+| [AndroidManifest.xml](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/AndroidManifest.xml) | 修改 |
+| `VoiceDateTimeParser.kt` | 修改 |
+| `VoiceTimeNormalizer.kt` | 新增 |
+| `SpeechRecognitionDiagnostics.kt` | 新增 |
+| `SpeechRecognitionProbe.kt` | 新增 |
+| `VoiceSpeechPolicy.kt` | 修改 |
+| `VoiceSpeechRecognizer.kt` | 修改 |
+| [VoiceInputSheet.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/voice/VoiceInputSheet.kt) | 修改 |
+| [SettingsContent.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/main/java/io/github/peanutpersimmon/rido/ui/feature/settings/SettingsContent.kt) | 修改 |
+| `SpeechDiagnosticsDialog.kt` | 新增 |
+| `VoiceDotTimeTest.kt` | 新增 |
+| `SpeechRecognitionDiagnosticsTest.kt` | 新增 |
+| [VoiceInteractionTest.kt](https://github.com/PeanutPersimmon/RIDO/blob/main/app/src/androidTest/java/io/github/peanutpersimmon/rido/ui/VoiceInteractionTest.kt) | 修改 |
+| `SpeechDiagnosticsUiTest.kt` | 新增 |

@@ -1,5 +1,7 @@
 # RIDO Domain Rules
 
+**RIDO 历史规则：本页原有的“规范性”措辞不适用于当前 RILO；Task / Tag 相关规则已不属于当前产品。**
+
 This file is normative. Later code, tests, migrations and product changes must preserve these rules unless a deliberate product decision updates this document first.
 
 ## Product invariant

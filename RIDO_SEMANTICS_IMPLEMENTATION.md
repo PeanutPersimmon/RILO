@@ -35,3 +35,5 @@ Voice 先判责任/安排/事实，再判时间形态。Policy 校验或澄清�
 ## 验证范围
 
 本轮新增三个 Blocker 的回归用例，覆盖 Editor 中未完成 Event Interval、Voice 清除 end 的形态转换，以及 Event 转 Record 缺实际时刻禁止直接写入。构建和测试结果以本轮验收回复为准。
+
+**RIDO 历史实施资料：其中的 Task 与 Room v5 描述不适用于当前 RILO。**
