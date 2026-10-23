@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">RILO</string>
+    <string name="nav_today">今天</string>
+    <string name="nav_plan">计划</string>
+    <string name="nav_statistics">统计</string>
+    <string name="nav_settings">设置</string>
+    <string name="plan_default_view">待办</string>
+    <string name="skeleton_ready">基础架构已就绪</string>
+    <string name="skeleton_today_body">今日实际时间轴将在后续业务阶段实现。</string>
+    <string name="skeleton_plan_body">计划视图将在后续业务阶段实现。</string>
+    <string name="skeleton_statistics_body">统计定义已建立，图表将在明确问题后实现。</string>
+    <string name="skeleton_settings_body">主题、分类与时间设置将在后续实现。</string>
+    <string name="today_load_error">无法加载今天</string>
+    <string name="today_plan_summary">今天还有 %1$d 项 · 下一项 %2$s %3$s</string>
+    <string name="today_plan_summary_without_time">今日 %1$d 项 · %2$s</string>
+    <string name="today_all_day">今天</string>
+    <string name="expand">展开</string>
+    <string name="collapse">收起</string>
+    <string name="timeline_now">当前时间</string>
+    <string name="timeline_wake">起床</string>
+    <string name="timeline_sleep">入睡</string>
+    <string name="timeline_ambiguous">归属待定</string>
+    <string name="timeline_active">计时中</string>
+    <string name="back">返回</string>
+    <string name="timer_stop">结束</string>
+    <string name="timer_stopping">正在结束</string>
+    <string name="timer_elapsed_accessibility">已计时 %1$d 小时 %2$d 分 %3$d 秒</string>
+    <string name="sleep_check_widget_name">睡眠打卡</string>
+    <string name="sleep_check_widget_horizontal_name">睡眠打卡 · 横向</string>
+    <string name="sleep_check_widget_vertical_name">睡眠打卡 · 竖向</string>
+    <string name="sleep_check_widget_description">快速记录入睡和起床时间</string>
+    <string name="sleep_check_widget_horizontal_description">横向快速记录入睡和起床时间</string>
+    <string name="sleep_check_widget_vertical_description">竖向快速记录入睡和起床时间</string>
+    <string name="sleep_check_widget_sleep_content_description">记录入睡时间</string>
+    <string name="sleep_check_widget_wake_content_description">记录起床时间</string>
+    <string name="sleep_check_widget_success_content_description">记录成功</string>
+</resources>

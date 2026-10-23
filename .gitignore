@@ -1,0 +1,46 @@
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local machine configuration
+local.properties
+.kotlin/
+
+# Signing and secrets
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+secrets.properties
+local.defaults.properties
+
+# Generated release artifacts
+*.apk
+*.aab
+app/release/
+captures/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local data and diagnostics
+.codex-remote-attachments/
+*.zip
+*.log
+*logcat*
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.pem
+*.p12
+*.pfx
+.env
+.env.*
+
